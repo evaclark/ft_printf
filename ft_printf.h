@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   printf.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eclark <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 09:56:32 by eclark            #+#    #+#             */
-/*   Updated: 2022/04/08 08:54:39 by eclark           ###   ########.fr       */
+/*   Created: 2022/03/29 12:37:06 by eclark            #+#    #+#             */
+/*   Updated: 2022/04/08 08:50:09 by eclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-int	ft_strlen(char *str)
-{
-	int	i;
+# include <unistd.h>
+# include <stdarg.h>
 
-	i = 0;
-	while (str[i])
-	{
-		i++;
-	}
-	return (i);
-}
+int		ft_putnbr(int n);
+int		ft_putchar(char c);
+int		ft_putstr(char *str);
+int		ft_strlen(char *str);
+int		ft_puthexl(unsigned int n);
+int		ft_puthexu(unsigned int n);
+int		ft_puthexp(void *p);
+int		ft_putunsigned(unsigned int n);
+int		ft_printf(const char *format, ...);
+
+#endif

@@ -6,13 +6,13 @@
 /*   By: eclark <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:02:10 by eclark            #+#    #+#             */
-/*   Updated: 2022/04/06 14:26:30 by eclark           ###   ########.fr       */
+/*   Updated: 2022/04/08 10:16:50 by eclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-int	check(const char character, va_list *args)
+int	check(const char character, va_list *args, int *i)
 {
 	if (character == 'c')
 		return (ft_putchar(va_arg(*args, int)));
@@ -32,6 +32,8 @@ int	check(const char character, va_list *args)
 		return (ft_puthexu(va_arg(*args, unsigned int)));
 	else if (character == '%')
 		return (ft_putchar('%'));
+	else
+		(*i)--;
 	return (0);
 }
 
@@ -49,7 +51,7 @@ int	ft_printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			length = length + check(format[i], &args);
+			length = length + check(format[i], &args, &i);
 			i++;
 		}
 		else

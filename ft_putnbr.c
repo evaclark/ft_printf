@@ -6,11 +6,11 @@
 /*   By: eclark <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 13:49:51 by eclark            #+#    #+#             */
-/*   Updated: 2022/04/06 13:52:16 by eclark           ###   ########.fr       */
+/*   Updated: 2022/04/08 09:33:13 by eclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_putnbr(int nb)
 {
@@ -24,17 +24,23 @@ int	ft_putnbr(int nb)
 	}
 	else if (nb < 0)
 	{
-		ft_putchar('-');
-		nb *= -1;
-		ft_putnbr(nb);
-		i++;
+		i += ft_putchar('-');
+		nb = nb * -1;
+		i += ft_putnbr(nb);
 	}
 	else if (nb > 9)
 	{
-		i = i + ft_putnbr(nb / 10);
-		i = i + ft_putnbr(nb % 10);
+		i += ft_putnbr(nb / 10);
+		i += ft_putnbr(nb % 10);
 	}
 	else
-		i = i + ft_putchar(nb + 48);
+		i += ft_putchar(nb + 48);
 	return (i);
 }
+/*
+int main()
+{
+	ft_printf("%i\n", -42242423);
+	printf("%i\n", ft_printf("%i\n", -42242423));
+}
+*/
