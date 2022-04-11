@@ -6,7 +6,7 @@
 /*   By: eclark <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 12:37:06 by eclark            #+#    #+#             */
-/*   Updated: 2022/04/08 08:50:09 by eclark           ###   ########.fr       */
+/*   Updated: 2022/04/08 11:22:40 by eclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@
 # include <unistd.h>
 # include <stdarg.h>
 
-int		ft_putnbr(int n);
+int		ft_putnbr(int nb);
 int		ft_putchar(char c);
 int		ft_putstr(char *str);
-int		ft_strlen(char *str);
 int		ft_puthexl(unsigned int n);
 int		ft_puthexu(unsigned int n);
 int		ft_puthexp(void *p);

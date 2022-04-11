@@ -6,7 +6,7 @@
 #    By: eclark <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/28 11:28:43 by eclark            #+#    #+#              #
-#    Updated: 2022/04/06 14:18:15 by eclark           ###   ########.fr        #
+#    Updated: 2022/04/08 11:23:46 by eclark           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror -c
 RM = rm -f
 
-SRCS = ft_putchar.c ft_putstr.c ft_putnbr.c ft_strlen.c ft_puthexl.c \
+SRCS = ft_putchar.c ft_putstr.c ft_putnbr.c ft_puthexl.c \
 		ft_puthexu.c ft_puthexp.c ft_putunsigned.c ft_printf.c
 OBJS = $(SRCS:.c=.o)
 
